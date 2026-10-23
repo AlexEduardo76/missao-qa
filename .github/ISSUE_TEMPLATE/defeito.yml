@@ -1,0 +1,75 @@
+
+name: Registro de defeito
+description: Registrar um defeito encontrado durante os testes
+title: "[DEFEITO] "
+labels:
+  - defeito
+body:
+  - type: markdown
+    attributes:
+      value: "Descreva o defeito com informações suficientes para reproduzi-lo."
+
+  - type: input
+    id: resumo
+    attributes:
+      label: Resumo do defeito
+      description: O que está funcionando incorretamente?
+      placeholder: Descreva o problema em uma frase
+    validations:
+      required: true
+
+  - type: textarea
+    id: passos
+    attributes:
+      label: Passos para reproduzir
+      description: Informe as etapas numeradas para reproduzir o problema.
+      placeholder: |
+        1. Acessar...
+        2. Informar...
+        3. Clicar em...
+    validations:
+      required: true
+
+  - type: textarea
+    id: esperado
+    attributes:
+      label: Resultado esperado
+      description: O que deveria acontecer?
+    validations:
+      required: true
+
+  - type: textarea
+    id: obtido
+    attributes:
+      label: Resultado obtido
+      description: O que aconteceu de fato?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severidade
+    attributes:
+      label: Severidade
+      options:
+        - Crítica
+        - Alta
+        - Média
+        - Baixa
+    validations:
+      required: true
+
+  - type: textarea
+    id: ambiente
+    attributes:
+      label: Ambiente de teste
+      description: Informe navegador, sistema, versão ou endpoint utilizado.
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidencias
+    attributes:
+      label: Evidências
+      description: Informe o caminho do print ou anexe a imagem na issue.
+    validations:
+      required: true
